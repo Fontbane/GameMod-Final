@@ -720,9 +720,9 @@ void PM_CatagorizePosition (void)
 					pm->s.pm_flags |= PMF_TIME_LAND;
 					// don't allow another jump for a little while
 					if (pml.velocity[2] < -400)
-						pm->s.pm_time = 25;	
+						pm->s.pm_time = 0;	
 					else
-						pm->s.pm_time = 18;
+						pm->s.pm_time = 0;
 				}
 			}
 		}
@@ -777,10 +777,10 @@ PM_CheckJump
 */
 void PM_CheckJump (void)
 {
-	if (pm->s.pm_flags & PMF_TIME_LAND)
+	/*if (pm->s.pm_flags & PMF_TIME_LAND)
 	{	// hasn't been long enough since landing to jump again
 		return;
-	}
+	}*/
 
 	if (pm->cmd.upmove < 10)
 	{	// not holding jump

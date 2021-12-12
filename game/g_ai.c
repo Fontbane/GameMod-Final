@@ -31,6 +31,7 @@ qboolean	enemy_infront;
 int			enemy_range;
 float		enemy_yaw;
 
+
 //============================================================================
 
 

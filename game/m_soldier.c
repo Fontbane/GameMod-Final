@@ -1216,6 +1216,7 @@ void SP_monster_soldier_x (edict_t *self)
 
 	self->pain = soldier_pain;
 	self->die = soldier_die;
+	self->element = ELEMENT_GRASS;
 
 	self->monsterinfo.stand = soldier_stand;
 	self->monsterinfo.walk = soldier_walk;

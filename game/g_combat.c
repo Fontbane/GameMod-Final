@@ -21,6 +21,55 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 #include "g_local.h"
 
+element_t gElementByMod[MOD_TARGET_BLASTER + 1] = {
+	[MOD_UNKNOWN] = ELEMENT_BASIC,
+	[MOD_BLASTER] = ELEMENT_FIRE,
+	[MOD_SHOTGUN] = ELEMENT_WATER,
+	[MOD_SSHOTGUN] = ELEMENT_WATER,
+	[MOD_MACHINEGUN] = ELEMENT_WATER,
+	[MOD_CHAINGUN] = ELEMENT_BASIC,
+	[MOD_GRENADE] = ELEMENT_FIRE,
+	[MOD_G_SPLASH] = ELEMENT_FIRE,
+	[MOD_ROCKET] = ELEMENT_FIRE,
+	[MOD_R_SPLASH] = ELEMENT_FIRE,
+	[MOD_HYPERBLASTER] = ELEMENT_LIGHTNING,
+	[MOD_RAILGUN] = ELEMENT_LIGHTNING,
+	[MOD_BFG_LASER] = ELEMENT_ICE,
+	[MOD_BFG_BLAST] = ELEMENT_ICE,
+	[MOD_BFG_EFFECT] = ELEMENT_ICE,
+	[MOD_HANDGRENADE] = ELEMENT_EARTH,
+	[MOD_HG_SPLASH] = ELEMENT_EARTH,
+	[MOD_WATER] = ELEMENT_WATER,
+	[MOD_SLIME] = ELEMENT_BASIC,
+	[MOD_LAVA] = ELEMENT_FIRE,
+	[MOD_CRUSH] = ELEMENT_EARTH,
+	[MOD_TELEFRAG] = ELEMENT_BASIC,
+	[MOD_FALLING] = ELEMENT_EARTH,
+	[MOD_SUICIDE] = ELEMENT_BASIC,
+	[MOD_HELD_GRENADE] = ELEMENT_EARTH,
+	[MOD_EXPLOSIVE] = ELEMENT_FIRE,
+	[MOD_BARREL] = ELEMENT_FIRE,
+	[MOD_BOMB] = ELEMENT_GRASS,
+	[MOD_EXIT] = ELEMENT_BASIC,
+	[MOD_SPLASH] = ELEMENT_WATER,
+	[MOD_TARGET_LASER] = ELEMENT_LIGHTNING,
+	[MOD_TRIGGER_HURT] = ELEMENT_BASIC,
+	[MOD_HIT] = ELEMENT_BASIC,
+	[MOD_TARGET_BLASTER] = ELEMENT_FIRE
+};
+
+element_info_t gElements[ELEMENT_MAX] = {
+	//Element			Weakness 1		Weakness 2		Resistance 1		Resistance 2
+	{ELEMENT_NONE,		ELEMENT_NONE,	ELEMENT_NONE,	ELEMENT_NONE,		ELEMENT_NONE},
+	{ELEMENT_BASIC,		ELEMENT_NONE,	ELEMENT_NONE,	ELEMENT_NONE,		ELEMENT_NONE},
+	{ELEMENT_FIRE,		ELEMENT_WATER,	ELEMENT_NONE,	ELEMENT_ICE,		ELEMENT_GRASS},
+	{ELEMENT_WATER,		ELEMENT_GRASS,	ELEMENT_ICE,	ELEMENT_FIRE,		ELEMENT_NONE},
+	{ELEMENT_GRASS,		ELEMENT_FIRE,	ELEMENT_WATER,	ELEMENT_LIGHTNING,	ELEMENT_NONE},
+	{ELEMENT_LIGHTNING, ELEMENT_EARTH,	ELEMENT_NONE,	ELEMENT_WATER,		ELEMENT_NONE},
+	{ELEMENT_EARTH,		ELEMENT_WATER,	ELEMENT_NONE,	ELEMENT_LIGHTNING,	ELEMENT_NONE},
+	{ELEMENT_ICE,		ELEMENT_FIRE,	ELEMENT_NONE,	ELEMENT_ICE,		ELEMENT_NONE}
+};
+
 /*
 ============
 CanDamage
@@ -166,6 +215,15 @@ dflags		these flags are used to control how T_Damage works
 	DAMAGE_NO_KNOCKBACK		do not affect velocity, just view angles
 	DAMAGE_BULLET			damage is from a bullet (used for ricochets)
 	DAMAGE_NO_PROTECTION	kills godmode, armor, everything
+	Last 4 bits: element
+	0000 BASIC
+	0001 FIRE
+	0010 WATER
+	0011 GRASS
+	0100 LIGHTNING
+	0101 EARTH
+	0110 ICE
+	0111 MAX
 ============
 */
 static int CheckPowerArmor (edict_t *ent, vec3_t point, vec3_t normal, int damage, int dflags)
@@ -447,8 +505,23 @@ void T_Damage (edict_t *targ, edict_t *inflictor, edict_t *attacker, vec3_t dir,
 		}
 	}
 
+
+	//check for elemental advantages
+	if (!(mod & MOD_FRIENDLY_FIRE)&&mod<34) {
+		int dmgelement = gElementByMod[mod];
+		element_info_t elinfo = gElements[targ->element];
+		//element_t damageElement = gElementByMod[mod];
+		if (targ->element && (dmgelement==elinfo.resist1||dmgelement==elinfo.resist2)) {
+			damage *= 0.5;
+		}
+		else if (targ->element && (dmgelement == elinfo.weak1 || dmgelement == elinfo.weak2)) {
+			damage *= 2;
+		}
+	}
+
 	take = damage;
 	save = 0;
+	if (attacker->client) gi.cprintf(attacker, PRINT_HIGH, "Dealt %i damage\n", damage);
 
 	// check for godmode
 	if ( (targ->flags & FL_GODMODE) && !(dflags & DAMAGE_NO_PROTECTION) )

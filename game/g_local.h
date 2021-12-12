@@ -198,7 +198,38 @@ MOVETYPE_FLYMISSILE,	// extra size to monsters
 MOVETYPE_BOUNCE
 } movetype_t;
 
+typedef enum
+{
+	ELEMENT_NONE,
+	ELEMENT_BASIC,
+	ELEMENT_FIRE,
+	ELEMENT_WATER,
+	ELEMENT_GRASS,
+	ELEMENT_LIGHTNING,
+	ELEMENT_EARTH,
+	ELEMENT_ICE,
+	ELEMENT_MAX
+} element_t;
 
+typedef struct
+{
+	element_t el;
+	int weak1;
+	int weak2;
+	int resist1;
+	int resist2;
+} element_info_t;
+
+/*int gElementMatchups[ELEMENT_MAX][ELEMENT_MAX] = {
+	//B  F  W  G  L  E  I
+	{ 1, 1, 1, 1, 1, 0, 1 },//Basic
+	{ 1, 1, 0, 2, 1, 0, 2 },//Fire
+	{ 1, 2, 1, 0, 1, 2, 1 },//Water
+	{ 1, 0, 2, 1, 1, 1, 1 },//Grass
+	{ 1, 1, 1, 1, 1, 0, 1 },//Lightning
+	{ 1, 1, 1, 1, 2, 1, 1 },//Earth
+	{ 1, 0, 2, 1, 1, 2, 1 },//Ice
+};*/
 
 typedef struct
 {
@@ -503,6 +534,7 @@ extern	int	body_armor_index;
 extern	int	meansOfDeath;
 
 
+
 extern	edict_t			*g_edicts;
 
 #define	FOFS(x) (int)&(((edict_t *)0)->x)
@@ -663,6 +695,15 @@ void T_RadiusDamage (edict_t *inflictor, edict_t *attacker, float damage, edict_
 #define DAMAGE_NO_KNOCKBACK		0x00000008	// do not affect velocity, just view angles
 #define DAMAGE_BULLET			0x00000010  // damage is from a bullet (used for ricochets)
 #define DAMAGE_NO_PROTECTION	0x00000020  // armor, shields, invulnerability, and godmode have no effect
+#define DAMAGE_BASIC			0x10000000
+#define DAMAGE_FIRE				0x20000000
+#define DAMAGE_WATER			0x40000000
+#define DAMAGE_GRASS			0x80000000
+#define DAMAGE_LIGHTNING		0x01000000
+#define DAMAGE_EARTH			0x02000000
+#define DAMAGE_ICE				0x04000000
+
+
 
 #define DEFAULT_BULLET_HSPREAD	300
 #define DEFAULT_BULLET_VSPREAD	500
@@ -1056,6 +1097,7 @@ struct edict_s
 	int			gib_health;
 	int			deadflag;
 	qboolean	show_hostile;
+	element_t	element;
 
 	float		powerarmor_time;
 

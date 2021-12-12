@@ -903,7 +903,7 @@ void Weapon_HyperBlaster_Fire (edict_t *ent)
 			if (deathmatch->value)
 				damage = 15;
 			else
-				damage = 20;
+				damage = 10;
 			Blaster_Fire (ent, offset, damage, true, effect);
 			if (! ( (int)dmflags->value & DF_INFINITE_AMMO ) )
 				ent->client->pers.inventory[ent->client->ammo_index]--;

@@ -614,11 +614,13 @@ void InitClientPersistant (gclient_t *client)
 	client->pers.selected_item = ITEM_INDEX(item);
 	client->pers.inventory[client->pers.selected_item] = 1;
 
-	client->pers.weapon = item;
+	
 
 	item = FindItem("Suck");
 	client->pers.selected_item = ITEM_INDEX(item);
 	client->pers.inventory[client->pers.selected_item] = 1;
+
+	client->pers.weapon = item;
 
 	client->pers.health			= 100;
 	client->pers.max_health		= 100;
@@ -1183,6 +1185,8 @@ void PutClientInServer (edict_t *ent)
 	ent->watertype = 0;
 	ent->flags &= ~FL_NO_KNOCKBACK;
 	ent->svflags &= ~SVF_DEADMONSTER;
+
+	client->copy_ability = CA_NONE;
 
 	VectorCopy (mins, ent->mins);
 	VectorCopy (maxs, ent->maxs);

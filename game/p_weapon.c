@@ -544,9 +544,7 @@ void Do_Suck(edict_t* ent) {
 	vec3_t	offset;
 
 	if (ent->client->sucked) {
-		gi.cprintf(ent, PRINT_HIGH, "Spit out ");
-		gi.cprintf(ent, PRINT_HIGH, ent->client->sucked->classname);
-		G_FreeEdict(ent->client->sucked);
+		return;
 	}
 
 	AngleVectors(ent->client->v_angle, forward, right, NULL);
@@ -569,22 +567,27 @@ void Do_Suck(edict_t* ent) {
 		if (Q_stricmp(ent->client->sucked->classname, "monster_hover") == 0) {
 			ent->client->copy_ability = CA_FREEZE;
 			ent->element = ELEMENT_ICE;
+			gi.cprintf(ent, PRINT_HIGH, "\nFreeze");
 		}
 		else if (Q_stricmp(ent->client->sucked->classname, "monster_floater") == 0) {
 			ent->client->copy_ability = CA_ZAP;
 			ent->element = ELEMENT_LIGHTNING;
+			gi.cprintf(ent, PRINT_HIGH, "\nZap");
 		}
 		else if (Q_stricmp(ent->client->sucked->classname, "monster_soldier") == 0) {
 			ent->client->copy_ability = CA_PYRO;
 			ent->element = ELEMENT_FIRE;
+			gi.cprintf(ent, PRINT_HIGH, "\nPyro");
 		}
 		else if (Q_stricmp(ent->client->sucked->classname, "monster_flipper") == 0) {
 			ent->client->copy_ability = CA_BAC;
 			ent->element = ELEMENT_WATER;
+			gi.cprintf(ent, PRINT_HIGH, "\nWater");
 		}
 		else if (Q_stricmp(ent->client->sucked->classname, "monster_parasite") == 0) {
 			ent->client->copy_ability = CA_LEECH;
 			ent->element = ELEMENT_GRASS;
+			gi.cprintf(ent, PRINT_HIGH, "\nLeech");
 		}
 	}
 
@@ -889,7 +892,7 @@ void Blaster_Fire (edict_t *ent, vec3_t g_offset, int damage, qboolean hyper, in
 	vec3_t	start;
 	vec3_t	offset;
 
-	if (!(ent->client->curry_framenum) || (ent->client->curry_framenum + 300 < level.framenum)) {
+	if (ent->client->copy_ability!=CA_PYRO && (!(ent->client->curry_framenum) || (ent->client->curry_framenum + 300 < level.framenum))) {
 		return;
 	}
 

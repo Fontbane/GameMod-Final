@@ -32,9 +32,9 @@ element_t gElementByMod[MOD_TARGET_BLASTER + 1] = {
 	[MOD_G_SPLASH] = ELEMENT_FIRE,
 	[MOD_ROCKET] = ELEMENT_FIRE,
 	[MOD_R_SPLASH] = ELEMENT_FIRE,
-	[MOD_HYPERBLASTER] = ELEMENT_LIGHTNING,
+	[MOD_HYPERBLASTER] = ELEMENT_ICE,
 	[MOD_RAILGUN] = ELEMENT_LIGHTNING,
-	[MOD_BFG_LASER] = ELEMENT_ICE,
+	[MOD_BFG_LASER] = ELEMENT_LIGHTNING,
 	[MOD_BFG_BLAST] = ELEMENT_ICE,
 	[MOD_BFG_EFFECT] = ELEMENT_ICE,
 	[MOD_HANDGRENADE] = ELEMENT_EARTH,
@@ -508,7 +508,9 @@ void T_Damage (edict_t *targ, edict_t *inflictor, edict_t *attacker, vec3_t dir,
 
 	//check for elemental advantages
 	if (!(mod & MOD_FRIENDLY_FIRE)&&mod<34) {
-		int dmgelement = gElementByMod[mod];
+		int dmgelement = attacker->element; 
+		if (dmgelement == ELEMENT_BASIC)
+			dmgelement = gElementByMod[mod];
 		element_info_t elinfo = gElements[targ->element];
 		//element_t damageElement = gElementByMod[mod];
 		if (targ->element && (dmgelement==elinfo.resist1||dmgelement==elinfo.resist2)) {
@@ -521,7 +523,7 @@ void T_Damage (edict_t *targ, edict_t *inflictor, edict_t *attacker, vec3_t dir,
 
 	take = damage;
 	save = 0;
-	if (attacker->client) gi.cprintf(attacker, PRINT_HIGH, "Dealt %i damage\n", damage);
+	if (attacker->client) gi.cprintf(attacker, PRINT_HIGH, "-%i\n", damage);
 
 	// check for godmode
 	if ( (targ->flags & FL_GODMODE) && !(dflags & DAMAGE_NO_PROTECTION) )
@@ -533,6 +535,17 @@ void T_Damage (edict_t *targ, edict_t *inflictor, edict_t *attacker, vec3_t dir,
 
 	// check for invincibility
 	if ((client && client->invincible_framenum > level.framenum ) && !(dflags & DAMAGE_NO_PROTECTION))
+	{
+		if (targ->pain_debounce_time < level.time)
+		{
+			gi.sound(targ, CHAN_ITEM, gi.soundindex("items/protect4.wav"), 1, ATTN_NORM, 0);
+			targ->pain_debounce_time = level.time + 2;
+		}
+		take = 0;
+		save = damage;
+	}
+	if ((client&&client->prism_framenum > level.framenum) && !(dflags & DAMAGE_NO_PROTECTION) 
+		&& (attacker->s.origin[2]>targ->viewheight+targ->s.origin[2]))
 	{
 		if (targ->pain_debounce_time < level.time)
 		{

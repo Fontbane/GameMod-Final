@@ -50,7 +50,6 @@ Global
 		{F575AF4A-7BDD-47F6-B65F-F43C514E0069}.Debug Alpha|Win32.ActiveCfg = Debug Alpha|Win32
 		{F575AF4A-7BDD-47F6-B65F-F43C514E0069}.Debug Alpha|Win32.Build.0 = Debug Alpha|Win32
 		{F575AF4A-7BDD-47F6-B65F-F43C514E0069}.Debug|Win32.ActiveCfg = Debug|Win32
-		{F575AF4A-7BDD-47F6-B65F-F43C514E0069}.Debug|Win32.Build.0 = Debug|Win32
 		{F575AF4A-7BDD-47F6-B65F-F43C514E0069}.Release Alpha|Win32.ActiveCfg = Release Alpha|Win32
 		{F575AF4A-7BDD-47F6-B65F-F43C514E0069}.Release Alpha|Win32.Build.0 = Release Alpha|Win32
 		{F575AF4A-7BDD-47F6-B65F-F43C514E0069}.Release|Win32.ActiveCfg = Release|Win32
@@ -60,7 +59,6 @@ Global
 		{3683FCAD-AD76-49EF-A337-4F660A3D237F}.Debug Alpha|Win32.ActiveCfg = Debug Alpha|Win32
 		{3683FCAD-AD76-49EF-A337-4F660A3D237F}.Debug Alpha|Win32.Build.0 = Debug Alpha|Win32
 		{3683FCAD-AD76-49EF-A337-4F660A3D237F}.Debug|Win32.ActiveCfg = Debug|Win32
-		{3683FCAD-AD76-49EF-A337-4F660A3D237F}.Debug|Win32.Build.0 = Debug|Win32
 		{3683FCAD-AD76-49EF-A337-4F660A3D237F}.Release Alpha|Win32.ActiveCfg = Release Alpha|Win32
 		{3683FCAD-AD76-49EF-A337-4F660A3D237F}.Release Alpha|Win32.Build.0 = Release Alpha|Win32
 		{3683FCAD-AD76-49EF-A337-4F660A3D237F}.Release|Win32.ActiveCfg = Release|Win32

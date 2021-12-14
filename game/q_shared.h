@@ -477,6 +477,7 @@ typedef enum
 #define	PMF_TIME_LAND		16	// pm_time is time before rejump
 #define	PMF_TIME_TELEPORT	32	// pm_time is non-moving time
 #define PMF_NO_PREDICTION	64	// temporarily disables prediction (used for grappling hook)
+#define PMF_JUMPED			128
 
 // this structure needs to be communicated bit-accurate
 // from the server to the client to guarantee that
@@ -491,6 +492,7 @@ typedef struct
 	short		velocity[3];	// 12.3
 	byte		pm_flags;		// ducked, jump_held, etc
 	byte		pm_time;		// each unit = 8 ms
+	//byte		numJumps;
 	short		gravity;
 	short		delta_angles[3];	// add to command angles to get view direction
 									// changed by spawns, rotating objects, and teleporters

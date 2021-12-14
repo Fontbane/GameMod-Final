@@ -35,6 +35,7 @@ void Weapon_Grenade (edict_t *ent);
 void Weapon_GrenadeLauncher (edict_t *ent);
 void Weapon_Railgun (edict_t *ent);
 void Weapon_BFG (edict_t *ent);
+void Weapon_Suck(edict_t* ent);
 
 gitem_armor_t jacketarmor_info	= { 25,  50, .30, .00, ARMOR_JACKET};
 gitem_armor_t combatarmor_info	= { 50, 100, .60, .30, ARMOR_COMBAT};
@@ -208,6 +209,20 @@ qboolean Pickup_Adrenaline (edict_t *ent, edict_t *other)
 	return true;
 }
 
+qboolean Pickup_Candy(edict_t* ent, edict_t* other)
+{
+
+	if (other->health < other->max_health)
+		other->health = other->max_health;
+
+	other->client->invincible_framenum = level.framenum+300;
+
+	if (!(ent->spawnflags & DROPPED_ITEM) && (deathmatch->value))
+		SetRespawn(ent, ent->item->quantity);
+
+	return true;
+}
+
 qboolean Pickup_AncientHead (edict_t *ent, edict_t *other)
 {
 	other->max_health += 2;
@@ -252,6 +267,32 @@ qboolean Pickup_Bandolier (edict_t *ent, edict_t *other)
 
 	if (!(ent->spawnflags & DROPPED_ITEM) && (deathmatch->value))
 		SetRespawn (ent, ent->item->quantity);
+
+	return true;
+}
+
+qboolean Pickup_Curry(edict_t* ent, edict_t* other) {
+	other->client->pers.inventory[ITEM_INDEX(ent->item)]++;
+
+	return true;
+}
+qboolean Pickup_Tomato(edict_t* ent, edict_t* other) {
+
+	if (other->health < other->max_health)
+		other->health = other->max_health;
+
+	if (!(ent->spawnflags & DROPPED_ITEM) && (deathmatch->value))
+		SetRespawn(ent, ent->item->quantity);
+
+	return true;
+}
+qboolean Pickup_WarpStar(edict_t* ent, edict_t* other) {
+	other->client->pers.inventory[ITEM_INDEX(ent->item)]=2;
+
+	return true;
+}
+qboolean Pickup_PrismShield(edict_t* ent, edict_t* other) {
+	other->client->pers.inventory[ITEM_INDEX(ent->item)]++;
 
 	return true;
 }
@@ -415,6 +456,46 @@ void	Use_Silencer (edict_t *ent, gitem_t *item)
 	ent->client->silencer_shots += 30;
 
 //	gi.sound(ent, CHAN_ITEM, gi.soundindex("items/damage.wav"), 1, ATTN_NORM, 0);
+}
+
+//======================================================================
+
+void	Use_Curry(edict_t* ent, gitem_t* item)
+{
+	ent->client->pers.inventory[ITEM_INDEX(item)]--;
+	ValidateSelectedItem(ent);
+	ent->client->curry_framenum = level.framenum;
+
+	//	gi.sound(ent, CHAN_ITEM, gi.soundindex("items/damage.wav"), 1, ATTN_NORM, 0);
+}
+
+//======================================================================
+
+void	Use_WarpStar(edict_t* ent, gitem_t* item)
+{
+	if (ent->client->pers.inventory[ITEM_INDEX(item)]==2) {
+		ent->client->pers.inventory[ITEM_INDEX(item)]--;
+		ent->status = STATUS_WARPING;
+	}
+	else {
+		ent->client->pers.inventory[ITEM_INDEX(item)]--;
+		ent->status = STATUS_CRASHING;
+	}
+
+	//	gi.sound(ent, CHAN_ITEM, gi.soundindex("items/damage.wav"), 1, ATTN_NORM, 0);
+}
+
+//======================================================================
+
+void	Use_PrismShield(edict_t* ent, gitem_t* item)
+{
+	ent->client->pers.inventory[ITEM_INDEX(item)]--;
+	ValidateSelectedItem(ent);
+	ent->client->prism_framenum = level.framenum+300;
+	ent->s.effects = EF_COLOR_SHELL;
+	ent->s.renderfx &= RF_SHELL_BLUE;
+
+	//	gi.sound(ent, CHAN_ITEM, gi.soundindex("items/damage.wav"), 1, ATTN_NORM, 0);
 }
 
 //======================================================================
@@ -1292,7 +1373,7 @@ always owned, never in the world
 		"weapon_blaster", 
 		NULL,
 		Use_Weapon,
-		NULL,
+		NULL, 
 		Weapon_Blaster,
 		"misc/w_pkup.wav",
 		NULL, 0,
@@ -1825,6 +1906,128 @@ gives +1 to maximum health
 /* precache */ ""
 	},
 
+	{
+		"item_maxim_tomato",
+		Pickup_Tomato,
+		NULL,
+		NULL,
+		NULL,
+		"items/pkup.wav",
+		NULL, 0,
+		NULL,
+		/* icon */		"i_health",
+		/* pickup */	"Maxim Tomato",
+		/* width */		3,
+				0,
+				NULL,
+				0,
+				0,
+				NULL,
+				0,
+				/* precache */ "items/s_health.wav items/n_health.wav items/l_health.wav items/m_health.wav"
+	},
+
+	{
+		"item_curry",
+		Pickup_Curry,
+		Use_Curry,
+		NULL,
+		NULL,
+		"items/pkup.wav",
+		NULL, 0,
+		NULL,
+		/* icon */		"i_health",
+		/* pickup */	"Superspicy Curry",
+		/* width */		3,
+				0,
+				NULL,
+				0,
+				0,
+				NULL,
+				0,
+				/* precache */ "items/s_health.wav items/n_health.wav items/l_health.wav items/m_health.wav"
+	},
+	{
+		"item_candy",
+		Pickup_Candy,
+		NULL,
+		NULL,
+		NULL,
+		"items/pkup.wav",
+		NULL, 0,
+		NULL,
+		/* icon */		"i_health",
+		/* pickup */	"Invincibility Candy",
+		/* width */		3,
+				0,
+				NULL,
+				0,
+				0,
+				NULL,
+				0,
+				/* precache */ "items/s_health.wav items/n_health.wav items/l_health.wav items/m_health.wav"
+	},
+	{
+		"item_warp_star",
+		Pickup_WarpStar,
+		Use_WarpStar,
+		NULL,
+		NULL,
+		"items/pkup.wav",
+		NULL, 0,
+		NULL,
+		/* icon */		"i_health",
+		/* pickup */	"Warp Star",
+		/* width */		3,
+				0,
+				NULL,
+				0,
+				0,
+				NULL,
+				0,
+				/* precache */ "items/s_health.wav items/n_health.wav items/l_health.wav items/m_health.wav"
+	},
+	{
+		"item_prism_shield",
+		Pickup_PrismShield,
+		Use_PrismShield,
+		NULL,
+		NULL,
+		"items/pkup.wav",
+		NULL, 0,
+		NULL,
+		/* icon */		"i_health",
+		/* pickup */	"Prism Shield",
+		/* width */		3,
+				0,
+				NULL,
+				0,
+				0,
+				NULL,
+				0,
+				/* precache */ "items/s_health.wav items/n_health.wav items/l_health.wav items/m_health.wav"
+	},
+	{
+		"weapon_suck",
+		NULL,
+		Use_Weapon,
+		NULL,
+		Weapon_Suck,
+		"misc/w_pkup.wav",
+		NULL, 0,
+		"models/weapons/v_blast/tris.md2",
+		/* icon */		"i_fixme",
+		/* pickup */	"Suck",
+				0,
+				0,
+				NULL,
+				IT_WEAPON | IT_STAY_COOP,
+				WEAP_SUCK,
+				NULL,
+				0,
+				/* precache */ "weapons/blastf1a.wav misc/lasfly.wav"
+	},
+
 /*QUAKED item_bandolier (.3 .3 1) (-16 -16 -16) (16 16 16)
 */
 	{
@@ -2130,6 +2333,20 @@ void SP_item_health (edict_t *self)
 	self->count = 10;
 	SpawnItem (self, FindItem ("Health"));
 	gi.soundindex ("items/n_health.wav");
+}
+
+void SP_item_tomato(edict_t* self)
+{
+	if (deathmatch->value && ((int)dmflags->value & DF_NO_HEALTH))
+	{
+		G_FreeEdict(self);
+		return;
+	}
+
+	self->model = "models/items/healing/medium/tris.md2";
+	self->count = 300;
+	SpawnItem(self, FindItem("Health"));
+	gi.soundindex("items/n_health.wav");
 }
 
 /*QUAKED item_health_small (.3 .3 1) (-16 -16 -16) (16 16 16)

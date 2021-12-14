@@ -295,6 +295,23 @@ void Cmd_Give_f (edict_t *ent)
 	}
 }
 
+void Cmd_Spawn_f (edict_t *ent)
+{
+	char* name;
+	monsterinfo_t* mons;
+	edict_t* m_ent;
+
+	name = gi.args();
+
+	
+	m_ent = G_Spawn();
+	m_ent->classname = name;
+	if (!ED_CallSpawn(m_ent)) {
+		gi.cprintf(ent, PRINT_HIGH, "unknown monster\n");
+		return;
+	}
+}
+
 
 /*
 ==================
@@ -949,6 +966,8 @@ void ClientCommand (edict_t *ent)
 		Cmd_Drop_f (ent);
 	else if (Q_stricmp (cmd, "give") == 0)
 		Cmd_Give_f (ent);
+	else if (Q_stricmp(cmd, "spawn") == 0)
+		Cmd_Spawn_f(ent);
 	else if (Q_stricmp (cmd, "god") == 0)
 		Cmd_God_f (ent);
 	else if (Q_stricmp (cmd, "notarget") == 0)

@@ -1,5 +1,4 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(499,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-  cd_win.c
   cl_cin.c
   cl_ents.c
 C:\Users\austi\Documents\Github\GameMod-Final\client\cl_ents.c(797,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
@@ -57,34 +56,6 @@ C:\Users\austi\Documents\Github\GameMod-Final\client\cl_view.c(281,2): warning C
 C:\Users\austi\Documents\Github\GameMod-Final\client\cl_view.c(285,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\austi\Documents\Github\GameMod-Final\client\cl_view.c(296,5): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\austi\Documents\Github\GameMod-Final\client\cl_view.c(339,2): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  cmd.c
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(318,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(320,4): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(339,4): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(340,4): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(463,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(470,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(472,4): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(474,2): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(587,3): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(588,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(589,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(591,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(660,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(678,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  cmodel.c
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmodel.c(195,3): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmodel.c(196,3): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmodel.c(629,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  common.c
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\common.c(107,2): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\common.c(117,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\common.c(134,14): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\common.c(160,2): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\common.c(186,2): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\common.c(1034,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\common.c(1509,21): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  conproc.c
   console.c
 C:\Users\austi\Documents\Github\GameMod-Final\client\console.c(161,6): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\austi\Documents\Github\GameMod-Final\client\console.c(184,3): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
@@ -95,25 +66,6 @@ C:\Users\austi\Documents\Github\GameMod-Final\client\console.c(649,4): warning C
 C:\Users\austi\Documents\Github\GameMod-Final\client\console.c(651,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\austi\Documents\Github\GameMod-Final\client\console.c(652,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\austi\Documents\Github\GameMod-Final\client\console.c(669,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  crc.c
-  cvar.c
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cvar.c(435,6): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  Generating Code...
-C:\Users\austi\Documents\Github\GameMod-Final\client\cl_input.c(479): warning C4700: uninitialized local variable 'buf' used
-  Compiling...
-  files.c
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\files.c(222,12): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\files.c(248,14): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\files.c(261,12): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\files.c(459,15): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\files.c(489,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\files.c(495,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\files.c(520,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\files.c(526,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\files.c(717,19): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\files.c(719,4): warning C4996: 'strlwr': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strlwr. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\files.c(743,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  in_win.c
   keys.c
 C:\Users\austi\Documents\Github\GameMod-Final\client\keys.c(178,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\austi\Documents\Github\GameMod-Final\client\keys.c(243,16): warning C4013: 'toupper' undefined; assuming extern returning int
@@ -124,8 +76,6 @@ C:\Users\austi\Documents\Github\GameMod-Final\client\keys.c(343,4): warning C499
 C:\Users\austi\Documents\Github\GameMod-Final\client\keys.c(522,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\austi\Documents\Github\GameMod-Final\client\keys.c(599,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\austi\Documents\Github\GameMod-Final\client\keys.c(601,4): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  m_flash.c
-  md4.c
   menu.c
 C:\Users\austi\Documents\Github\GameMod-Final\client\menu.c(421,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\austi\Documents\Github\GameMod-Final\client\menu.c(422,2): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
@@ -163,33 +113,6 @@ C:\Users\austi\Documents\Github\GameMod-Final\client\menu.c(3637,3): warning C49
 C:\Users\austi\Documents\Github\GameMod-Final\client\menu.c(3642,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\austi\Documents\Github\GameMod-Final\client\menu.c(3643,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\austi\Documents\Github\GameMod-Final\client\menu.c(3680,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  net_chan.c
-C:\Users\austi\Documents\Github\GameMod-Final\qcommon\net_chan.c(138,2): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  net_wins.c
-C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(201,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(202,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(203,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(204,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(205,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(206,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(207,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(208,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(209,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(210,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(211,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(220,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(484,45): warning C4133: 'function': incompatible types - from 'qboolean *' to 'u_long *'
-C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(497,46): warning C4996: 'stricmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _stricmp. See online help for details.
-  pmove.c
-  q_shared.c
-C:\Users\austi\Documents\Github\GameMod-Final\game\q_shared.c(876,3): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\game\q_shared.c(897,2): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\game\q_shared.c(923,2): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\game\q_shared.c(1056,2): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\game\q_shared.c(1230,8): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\game\q_shared.c(1234,2): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\austi\Documents\Github\GameMod-Final\game\q_shared.c(1334,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  q_shwin.c
   qmenu.c
 C:\Users\austi\Documents\Github\GameMod-Final\client\qmenu.c(94,2): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\austi\Documents\Github\GameMod-Final\client\qmenu.c(204,4): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
@@ -208,7 +131,65 @@ C:\Users\austi\Documents\Github\GameMod-Final\client\snd_dma.c(1174,4): warning 
   snd_mem.c
 C:\Users\austi\Documents\Github\GameMod-Final\client\snd_mem.c(125,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   snd_mix.c
-  snd_win.c
+  x86.c
+  Generating Code...
+C:\Users\austi\Documents\Github\GameMod-Final\client\menu.c(3580): warning C4715: 'PlayerConfig_ScanDirectories': not all control paths return a value
+C:\Users\austi\Documents\Github\GameMod-Final\client\cl_input.c(479): warning C4700: uninitialized local variable 'buf' used
+  Compiling...
+  m_flash.c
+  q_shared.c
+C:\Users\austi\Documents\Github\GameMod-Final\game\q_shared.c(876,3): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\game\q_shared.c(897,2): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\game\q_shared.c(923,2): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\game\q_shared.c(1056,2): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\game\q_shared.c(1230,8): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\game\q_shared.c(1234,2): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\game\q_shared.c(1334,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  cmd.c
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(318,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(320,4): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(339,4): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(340,4): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(463,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(470,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(472,4): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(474,2): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(587,3): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(588,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(589,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(591,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(660,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmd.c(678,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  cmodel.c
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmodel.c(195,3): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmodel.c(196,3): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cmodel.c(629,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  common.c
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\common.c(107,2): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\common.c(117,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\common.c(134,14): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\common.c(160,2): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\common.c(186,2): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\common.c(1034,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\common.c(1509,21): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  crc.c
+  cvar.c
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\cvar.c(435,6): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  files.c
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\files.c(222,12): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\files.c(248,14): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\files.c(261,12): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\files.c(459,15): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\files.c(489,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\files.c(495,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\files.c(520,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\files.c(526,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\files.c(717,19): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\files.c(719,4): warning C4996: 'strlwr': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strlwr. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\files.c(743,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  net_chan.c
+C:\Users\austi\Documents\Github\GameMod-Final\qcommon\net_chan.c(138,2): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  pmove.c
   sv_ccmds.c
 C:\Users\austi\Documents\Github\GameMod-Final\server\sv_ccmds.c(200,7): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\austi\Documents\Github\GameMod-Final\server\sv_ccmds.c(203,7): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
@@ -248,12 +229,6 @@ C:\Users\austi\Documents\Github\GameMod-Final\server\sv_init.c(223,2): warning C
 C:\Users\austi\Documents\Github\GameMod-Final\server\sv_init.c(406,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\austi\Documents\Github\GameMod-Final\server\sv_init.c(427,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\austi\Documents\Github\GameMod-Final\server\sv_init.c(434,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  Generating Code...
-C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(124): warning C4715: 'NET_CompareAdr': not all control paths return a value
-C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(154): warning C4715: 'NET_CompareBaseAdr': not all control paths return a value
-C:\Users\austi\Documents\Github\GameMod-Final\client\menu.c(3580): warning C4715: 'PlayerConfig_ScanDirectories': not all control paths return a value
-C:\Users\austi\Documents\Github\GameMod-Final\win32\in_win.c(574): warning C4715: 'RawValuePointer': not all control paths return a value
-  Compiling...
   sv_main.c
 C:\Users\austi\Documents\Github\GameMod-Final\server\sv_main.c(118,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\austi\Documents\Github\GameMod-Final\server\sv_main.c(119,2): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
@@ -270,6 +245,28 @@ C:\Users\austi\Documents\Github\GameMod-Final\server\sv_send.c(140,2): warning C
   sv_user.c
 C:\Users\austi\Documents\Github\GameMod-Final\server\sv_user.c(578,4): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   sv_world.c
+  cd_win.c
+  in_win.c
+  Generating Code...
+C:\Users\austi\Documents\Github\GameMod-Final\win32\in_win.c(574): warning C4715: 'RawValuePointer': not all control paths return a value
+  Compiling...
+  net_wins.c
+C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(201,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(202,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(203,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(204,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(205,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(206,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(207,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(208,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(209,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(210,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(211,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(220,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(484,45): warning C4133: 'function': incompatible types - from 'qboolean *' to 'u_long *'
+C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(497,46): warning C4996: 'stricmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _stricmp. See online help for details.
+  q_shwin.c
+  snd_win.c
   sys_win.c
 C:\Users\austi\Documents\Github\GameMod-Final\win32\sys_win.c(76,2): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\austi\Documents\Github\GameMod-Final\win32\sys_win.c(163,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
@@ -288,7 +285,8 @@ C:\Users\austi\Documents\Github\GameMod-Final\win32\vid_menu.c(170,7): warning C
 C:\Users\austi\Documents\Github\GameMod-Final\win32\vid_menu.c(175,9): warning C4996: 'stricmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _stricmp. See online help for details.
 C:\Users\austi\Documents\Github\GameMod-Final\win32\vid_menu.c(184,5): warning C4996: 'putenv': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _putenv. See online help for details.
 C:\Users\austi\Documents\Github\GameMod-Final\win32\vid_menu.c(186,5): warning C4996: 'putenv': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _putenv. See online help for details.
-  x86.c
   Generating Code...
+C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(154): warning C4715: 'NET_CompareBaseAdr': not all control paths return a value
+C:\Users\austi\Documents\Github\GameMod-Final\win32\net_wins.c(124): warning C4715: 'NET_CompareAdr': not all control paths return a value
 cd_win.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/INCREMENTAL:NO' specification
   quake2.vcxproj -> C:\Program Files (x86)\Steam\steamapps\common\Quake 2\quake2.exe

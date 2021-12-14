@@ -530,6 +530,76 @@ void Weapon_Generic (edict_t *ent, int FRAME_ACTIVATE_LAST, int FRAME_FIRE_LAST,
 	}
 }
 
+/*
+======================================================================
+
+SUCC
+
+======================================================================
+*/
+
+void Do_Suck(edict_t* ent) {
+	vec3_t	forward, right;
+	vec3_t	start;
+	vec3_t	offset;
+
+	if (ent->client->sucked) {
+		gi.cprintf(ent, PRINT_HIGH, "Spit out ");
+		gi.cprintf(ent, PRINT_HIGH, ent->client->sucked->classname);
+		G_FreeEdict(ent->client->sucked);
+	}
+
+	AngleVectors(ent->client->v_angle, forward, right, NULL);
+	VectorSet(offset, 24, 8, ent->viewheight - 8);
+	P_ProjectSource(ent->client, ent->s.origin, offset, forward, right, start);
+
+	VectorScale(forward, -2, ent->client->kick_origin);
+	ent->client->kick_angles[0] = -1;
+	fire_bullet(ent, start, forward, 0, -100, 10, 10, MOD_UNKNOWN);
+
+	vec3_t end;
+	VectorAdd(start, forward, end);
+
+	trace_t tr = gi.trace(start, NULL, NULL, end, ent, MASK_SHOT);
+	if (tr.ent&&tr.ent->monsterinfo.scale) {
+		ent->client->sucked = tr.ent;
+		gi.cprintf(ent, PRINT_HIGH, "Sucked ");
+		gi.cprintf(ent, PRINT_HIGH, ent->client->sucked->classname);
+		T_Damage(tr.ent, ent, ent, forward, tr.endpos, tr.plane.normal, 200, -100, DAMAGE_BULLET, MOD_UNKNOWN);
+		if (Q_stricmp(ent->client->sucked->classname, "monster_hover") == 0) {
+			ent->client->copy_ability = CA_FREEZE;
+			ent->element = ELEMENT_ICE;
+		}
+		else if (Q_stricmp(ent->client->sucked->classname, "monster_floater") == 0) {
+			ent->client->copy_ability = CA_ZAP;
+			ent->element = ELEMENT_LIGHTNING;
+		}
+		else if (Q_stricmp(ent->client->sucked->classname, "monster_soldier") == 0) {
+			ent->client->copy_ability = CA_PYRO;
+			ent->element = ELEMENT_FIRE;
+		}
+		else if (Q_stricmp(ent->client->sucked->classname, "monster_flipper") == 0) {
+			ent->client->copy_ability = CA_BAC;
+			ent->element = ELEMENT_WATER;
+		}
+		else if (Q_stricmp(ent->client->sucked->classname, "monster_parasite") == 0) {
+			ent->client->copy_ability = CA_LEECH;
+			ent->element = ELEMENT_GRASS;
+		}
+	}
+
+
+	// send muzzle flash
+
+}
+
+void Weapon_Suck(edict_t *ent) {
+	static int	pause_frames[] = { 19, 32, 0 };
+	static int	fire_frames[] = { 5, 0 };
+
+	Weapon_Generic(ent, 4, 8, 52, 55, pause_frames, fire_frames, Do_Suck);
+}
+
 
 /*
 ======================================================================
@@ -818,6 +888,10 @@ void Blaster_Fire (edict_t *ent, vec3_t g_offset, int damage, qboolean hyper, in
 	vec3_t	forward, right;
 	vec3_t	start;
 	vec3_t	offset;
+
+	if (!(ent->client->curry_framenum) || (ent->client->curry_framenum + 300 < level.framenum)) {
+		return;
+	}
 
 	if (is_quad)
 		damage *= 4;

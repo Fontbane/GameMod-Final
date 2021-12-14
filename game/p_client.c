@@ -616,6 +616,10 @@ void InitClientPersistant (gclient_t *client)
 
 	client->pers.weapon = item;
 
+	item = FindItem("Suck");
+	client->pers.selected_item = ITEM_INDEX(item);
+	client->pers.inventory[client->pers.selected_item] = 1;
+
 	client->pers.health			= 100;
 	client->pers.max_health		= 100;
 
@@ -1610,6 +1614,7 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 			client->ps.pmove.pm_type = PM_NORMAL;
 
 		client->ps.pmove.gravity = sv_gravity->value;
+		client->ps.pmove.gravity /= 2;
 		pm.s = client->ps.pmove;
 
 		for (i=0 ; i<3 ; i++)
@@ -1628,6 +1633,12 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 
 		pm.trace = PM_trace;	// adds default parms
 		pm.pointcontents = gi.pointcontents;
+
+		if (ent->status == STATUS_WARPING) {
+			pm.s.velocity[0] = sin(M_PI / 4) * 100;
+			pm.s.velocity[1] = sin(M_PI / 4) * 100;
+			pm.s.velocity[2] = 100;
+		}
 
 		// perform a pmove
 		gi.Pmove (&pm);
@@ -1649,10 +1660,22 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 		client->resp.cmd_angles[1] = SHORT2ANGLE(ucmd->angles[1]);
 		client->resp.cmd_angles[2] = SHORT2ANGLE(ucmd->angles[2]);
 
-		if (ent->groundentity && !pm.groundentity && (pm.cmd.upmove >= 10) && (pm.waterlevel == 0))
+		if (ent->groundentity && !pm.groundentity && (pm.cmd.upmove >= 10) && (pm.waterlevel == 0) )
 		{
 			gi.sound(ent, CHAN_VOICE, gi.soundindex("*jump1.wav"), 1, ATTN_NORM, 0);
 			PlayerNoise(ent, ent->s.origin, PNOISE_SELF);
+
+		}
+		else if ((pm.cmd.upmove >= 10) && (pm.waterlevel == 0) && level.sound_entity_framenum<level.framenum-2)
+		{
+			gi.sound(ent, CHAN_VOICE, gi.soundindex("*jump1.wav"), 1, ATTN_NORM, 0);
+			PlayerNoise(ent, ent->s.origin, PNOISE_SELF);
+			ent->velocity[2] = 140;
+		}
+		else if ((pm.cmd.upmove < -5) && (pm.waterlevel == 0) && client->copy_ability==CA_STONE && level.sound_entity_framenum < level.framenum - 2)
+		{
+			ent->velocity[2] -= 50;
+			client->invincible_framenum+=1;
 		}
 
 		ent->viewheight = pm.viewheight;
@@ -1660,7 +1683,11 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 		ent->watertype = pm.watertype;
 		ent->groundentity = pm.groundentity;
 		if (pm.groundentity)
+		{
 			ent->groundentity_linkcount = pm.groundentity->linkcount;
+			//client->ps.pmove.numJumps=0;
+		}
+			
 
 		if (ent->deadflag)
 		{
@@ -1691,6 +1718,10 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 			if (!other->touch)
 				continue;
 			other->touch (other, ent, NULL, NULL);
+			if (client->invincible_framenum > level.framenum) {
+				T_RadiusDamage(ent, ent, 1000.0f, ent, 10.0f, MOD_CRUSH);
+			}
+			
 		}
 
 	}
@@ -1719,7 +1750,13 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 		} else if (!client->weapon_thunk) {
 			client->weapon_thunk = true;
 			Think_Weapon (ent);
+			if (!(client->ps.pmove.pm_flags & PMF_ON_GROUND)){
+				//client->ps.pmove.numJumps = 0;
+				ent->velocity[2] -= 280;
+				//gi.cprintf(ent, PRINT_CHAT, "Reset jumps");
+			}
 		}
+
 	}
 
 	if (client->resp.spectator) {
@@ -1740,6 +1777,10 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 		other = g_edicts + i;
 		if (other->inuse && other->client->chase_target == ent)
 			UpdateChaseCam(other);
+	}
+
+	if (client->invincible_framenum > level.framenum) {
+		T_RadiusDamage(ent, ent, 1000.0f, ent, 10.0f, MOD_CRUSH);
 	}
 }
 

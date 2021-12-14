@@ -439,19 +439,16 @@ void hover_fire_blaster (edict_t *self)
 	vec3_t	dir;
 	int		effect;
 
-	if (self->s.frame == FRAME_attak104)
-		effect = EF_HYPERBLASTER;
-	else
-		effect = 0;
+	effect = EF_COLOR_SHELL;
 
 	AngleVectors (self->s.angles, forward, right, NULL);
-	G_ProjectSource (self->s.origin, monster_flash_offset[MZ2_HOVER_BLASTER_1], forward, right, start);
+	G_ProjectSource (self->s.origin, monster_flash_offset[MZ2_GLADIATOR_RAILGUN_1], forward, right, start);
 
 	VectorCopy (self->enemy->s.origin, end);
 	end[2] += self->enemy->viewheight;
 	VectorSubtract (end, start, dir);
 
-	monster_fire_blaster (self, start, dir, 1, 1000, MZ2_HOVER_BLASTER_1, effect);
+	monster_fire_blaster (self, start, dir, 1, 100, MZ2_GLADIATOR_RAILGUN_1, effect);
 }
 
 
@@ -599,6 +596,7 @@ void SP_monster_hover (edict_t *self)
 	self->health = 240;
 	self->gib_health = -100;
 	self->mass = 150;
+	self->element = ELEMENT_ICE;
 
 	self->pain = hover_pain;
 	self->die = hover_die;

@@ -261,6 +261,7 @@ typedef struct
 #define WEAP_HYPERBLASTER		9 
 #define WEAP_RAILGUN			10
 #define WEAP_BFG				11
+#define WEAP_SUCK				12
 
 typedef struct gitem_s
 {
@@ -866,6 +867,19 @@ void GetChaseTarget(edict_t *ent);
 #define	ANIM_DEATH		5
 #define	ANIM_REVERSE	6
 
+typedef enum {
+	CA_NONE,
+	CA_FREEZE,
+	CA_LEECH,
+	CA_STONE,
+	CA_ZAP,
+	CA_PYRO,
+	CA_BAC,
+	CA_INVIS,
+	CA_WATER,
+	CA_MAX
+} copy_ability_t;
+
 
 // client data that stays across multiple level loads
 typedef struct
@@ -940,6 +954,8 @@ struct gclient_s
 	int			oldbuttons;
 	int			latched_buttons;
 
+	copy_ability_t copy_ability;
+
 	qboolean	weapon_thunk;
 
 	gitem_t		*newweapon;
@@ -984,6 +1000,14 @@ struct gclient_s
 	float		invincible_framenum;
 	float		breather_framenum;
 	float		enviro_framenum;
+	float		invisible_framenum;
+	float		drunk_framenum;
+	float		stunned_framenum;
+	float		curry_framenum;
+	float		prism_framenum;
+
+	edict_t*	sucked;
+
 
 	qboolean	grenade_blew_up;
 	float		grenade_time;
@@ -1002,6 +1026,14 @@ struct gclient_s
 	qboolean	update_chase;		// need to update chase info?
 };
 
+#define STATUS_NONE 0
+#define STATUS_STUNNED 1
+#define STATUS_FROZEN 2
+#define STATUS_DRUNK 3
+#define STATUS_UNTOUCHABLE 4
+#define STATUS_BURNED 5
+#define STATUS_WARPING 6
+#define STATUS_CRASHING 7
 
 struct edict_s
 {
@@ -1098,6 +1130,7 @@ struct edict_s
 	int			deadflag;
 	qboolean	show_hostile;
 	element_t	element;
+	byte		status;
 
 	float		powerarmor_time;
 

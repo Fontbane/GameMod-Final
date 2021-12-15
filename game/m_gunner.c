@@ -609,6 +609,7 @@ void SP_monster_gunner (edict_t *self)
 
 	self->pain = gunner_pain;
 	self->die = gunner_die;
+	self->element = ELEMENT_WATER;
 
 	self->monsterinfo.stand = gunner_stand;
 	self->monsterinfo.walk = gunner_walk;

@@ -589,6 +589,7 @@ void Do_Suck(edict_t* ent) {
 			ent->element = ELEMENT_GRASS;
 			gi.cprintf(ent, PRINT_HIGH, "\nLeech");
 		}
+		G_FreeEdict(ent->client->sucked);
 	}
 
 
@@ -596,11 +597,17 @@ void Do_Suck(edict_t* ent) {
 
 }
 
+void Weapon_Suck_Fire(edict_t* ent)
+{
+	Do_Suck(ent);
+	ent->client->ps.gunframe++;
+}
+
 void Weapon_Suck(edict_t *ent) {
 	static int	pause_frames[] = { 19, 32, 0 };
 	static int	fire_frames[] = { 5, 0 };
 
-	Weapon_Generic(ent, 4, 8, 52, 55, pause_frames, fire_frames, Do_Suck);
+	Weapon_Generic(ent, 4, 8, 52, 55, pause_frames, fire_frames, Weapon_Suck_Fire);
 }
 
 
